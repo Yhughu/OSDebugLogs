@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.outsystems.plugins.debuglogs" version="0.0.4">
+  <name>OSDebugLogs</name>
+  <description>Cordova plugin for OutSystems Apps</description>
+
+  <!-- cordova -->
+  <engines>
+      <engine name="cordova-android" version=">=13.0.0" />
+      <engine name="cordova-ios" version=">=7.1.0" />
+  </engines>
+ 
+  <js-module name="OSDebugLogs" src="www/OSDebugLogs.js">
+    <clobbers target="cordova.plugins.OSDebugLogs"/>
+  </js-module>
+  
+  <!--<dependency id="com.outsystems.plugins.loader"/>-->
+  <dependency id="cordova-plugin-console" url="https://github.com/luissilvaos/cordova-plugin-console#outsystems"/>
+
+  <platform name="android">
+    <preference name="AndroidXEnabled" value="true" />
+    <preference name="GradlePluginGoogleServicesEnabled" value="true" />
+      <config-file parent="/*" target="config.xml">
+        <feature name="OSDebugLogs">
+            <param name="android-package" value="com.outsystems.plugins.debug.OSDebugLogs"/>
+            <param name="onload" value="true" />
+       </feature>
+      </config-file>
+
+    <source-file src="src/android/com/outsystems/plugins/debug/OSDebugLogs.java" target-dir="src/com/outsystems/plugins/debug"/>
+
+    <source-file src="src/android/com/outsystems/plugins/debug/console/OSConsole.java" target-dir="src/com/outsystems/plugins/debug/console" />
+    <source-file src="src/android/com/outsystems/plugins/debug/console/OSConsoleCommands.java" target-dir="src/com/outsystems/plugins/debug/console" />
+    <source-file src="src/android/com/outsystems/plugins/debug/console/OSConsoleFragment.java" target-dir="src/com/outsystems/plugins/debug/console" />
+
+    <source-file src="src/android/layout/fragment_console.xml" target-dir="res/layout"/>
+
+  </platform>
+
+  <platform name="ios">
+    <config-file parent="/*" target="config.xml">
+      <feature name="OSDebugLogs">
+        <param name="ios-package" value="OSDebugLogs"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/ios/OSDebugLogs.h"/>
+    <source-file src="src/ios/OSDebugLogs.m"/>
+
+    <source-file src="src/ios/OSConsole/OSConsole.xib"/>
+    <source-file src="src/ios/OSConsole/OSConsoleViewController.h"/>
+    <source-file src="src/ios/OSConsole/OSConsoleViewController.m"/>
+
+  </platform>
+
+</plugin>
+
