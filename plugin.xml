@@ -19,8 +19,6 @@
   <dependency id="cordova-plugin-console" url="https://github.com/luissilvaos/cordova-plugin-console#outsystems"/>
 
   <platform name="android">
-    <preference name="AndroidXEnabled" value="true" />
-    <preference name="GradlePluginGoogleServicesEnabled" value="true" />
       <config-file parent="/*" target="config.xml">
         <feature name="OSDebugLogs">
             <param name="android-package" value="com.outsystems.plugins.debug.OSDebugLogs"/>
