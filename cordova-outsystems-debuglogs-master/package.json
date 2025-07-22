@@ -1,0 +1,26 @@
+{
+  "name": "com.outsystems.plugins.debuglogs",
+  "version": "0.0.4",
+  "description": "Cordova plugin for OutSystems Apps",
+  "cordova": {
+    "id": "com.outsystems.plugins.debuglogs",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luissilvaos/cordova-outsystems-debuglogs.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "outsystems"
+  ],
+  "bugs": {
+    "url": "https://github.com/luissilvaos/cordova-outsystems-debuglogs/issues"
+  },
+  "homepage": "https://github.com/luissilvaos/cordova-outsystems-debuglogs#readme"
+}
