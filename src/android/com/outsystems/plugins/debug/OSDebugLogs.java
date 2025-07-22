@@ -10,7 +10,6 @@ import android.widget.RelativeLayout;
 import com.outsystems.plugins.debug.console.OSConsole;
 import com.outsystems.plugins.loader.clients.ChromeClient;
 
-import org.apache.cordova.BuildConfig;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaActivity;
 import org.apache.cordova.CordovaInterface;
