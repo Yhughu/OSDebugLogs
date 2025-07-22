@@ -28,9 +28,6 @@ public class OSDebugLogs extends CordovaPlugin {
 
     @Override
     protected void pluginInitialize() {
-        if(BuildConfig.DEBUG) {
-            Log.d(this.getClass().getName(), "Plugin Initialize: started");
-        }
 
         SystemWebViewEngine webViewEngine = (SystemWebViewEngine)this.webView.getEngine();
         SystemWebView systemWebView = (SystemWebView)webViewEngine.getView();
@@ -70,11 +67,6 @@ public class OSDebugLogs extends CordovaPlugin {
                 mOsConsole = new OSConsole(cordovaActivity, getConsoleViewGroup());
             }
         });
-
-
-        if(BuildConfig.DEBUG) {
-            Log.d(this.getClass().getName(), "Plugin Initialize: finished");
-        }
     }
 
     public ViewGroup getConsoleViewGroup() {
