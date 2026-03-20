@@ -43,10 +43,7 @@ public class OSDebugLogs extends CordovaPlugin {
             public void run() {
 
                 CordovaActivity cordovaActivity = (CordovaActivity) cordova.getActivity();
-
-                ViewGroup mainViewGroup = (ViewGroup) webView.getView().getParent();
-
-                ViewGroup rootView = (ViewGroup)mainViewGroup.getParent();
+                ViewGroup rootView = cordovaActivity.findViewById(android.R.id.content);
 
                 if(rootView instanceof LinearLayout){
                     LinearLayout linearLayout = (LinearLayout)rootView;
@@ -59,7 +56,7 @@ public class OSDebugLogs extends CordovaPlugin {
                 consoleViewGroup.setId(2016);
                 consoleViewGroup.setVisibility(View.GONE);
 
-                rootView.addView(consoleViewGroup, 0);
+                rootView.addView(consoleViewGroup);
                 rootView.invalidate();
 
                 setConsoleViewGroup(consoleViewGroup);
